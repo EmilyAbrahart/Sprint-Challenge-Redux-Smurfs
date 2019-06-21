@@ -13,10 +13,12 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+        <h1>Smurfs</h1>
 				<SmurfsList
 					smurfs={this.props.smurfs}
 					addSmurf={this.props.addSmurf}
-					fetchSmurfs={this.props.fetchSmurfs}
+          fetchSmurfs={this.props.fetchSmurfs}
+          deleteSmurf={this.props.deleteSmurf}
 				/>
 			</div>
 		);
