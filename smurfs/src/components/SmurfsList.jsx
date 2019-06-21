@@ -1,5 +1,13 @@
 import React from 'react';
 import { Smurf } from './Smurf';
+import styled from 'styled-components';
+import { FlexFunc } from './../~reusables/reusables';
+
+const SmurfListDiv = styled.div`
+	${FlexFunc('row', 'space-evenly', 'center')};
+	flex-wrap: wrap;
+	position: relative;
+`;
 
 export class SmurfsList extends React.Component {
 	componentDidMount() {
@@ -8,11 +16,15 @@ export class SmurfsList extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<SmurfListDiv>
 				{this.props.smurfs.map(smurf => (
-					<Smurf {...smurf} key={smurf.id} deleteSmurf={this.props.deleteSmurf}/>
+					<Smurf
+						{...smurf}
+						key={smurf.id}
+						deleteSmurf={this.props.deleteSmurf}
+					/>
 				))}
-			</div>
+			</SmurfListDiv>
 		);
 	}
 }

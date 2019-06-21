@@ -1,27 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
 import { SmurfsList } from './SmurfsList';
-import {SmurfForm} from './SmurfForm';
+import { SmurfForm } from './SmurfForm';
 import { connect } from 'react-redux';
 import { fetchSmurfs, addSmurf, deleteSmurf } from './../actions/index';
-/*
- to wire this component up you're going to need a few things.
- I'll let you do this part on your own. 
- Just remember, `how do I `connect` my components to redux?`
- `How do I ensure that my component links the state to props?`
- */
+import styled from 'styled-components';
+import { FlexFunc, color_light, text_font } from './../~reusables/reusables';
+
+const AppDiv = styled.div`
+	${FlexFunc('column', 'space-evenly', 'center')};
+	color: ${color_light};
+	font-family: ${text_font};
+`;
+
+const ContentContainer = styled.div`
+	${FlexFunc('row', 'flex-start', 'flex-start')};
+`;
+
 class App extends Component {
 	render() {
 		return (
-			<div className="App">
-        <h1>Smurfs</h1>
-				<SmurfsList
-					smurfs={this.props.smurfs}
-          fetchSmurfs={this.props.fetchSmurfs}
-          deleteSmurf={this.props.deleteSmurf}
-				/>
-        <SmurfForm 	addSmurf={this.props.addSmurf} />
-			</div>
+			<AppDiv>
+				<ContentContainer>
+					<SmurfForm addSmurf={this.props.addSmurf} />
+					<SmurfsList
+						smurfs={this.props.smurfs}
+						fetchSmurfs={this.props.fetchSmurfs}
+						deleteSmurf={this.props.deleteSmurf}
+					/>
+				</ContentContainer>
+			</AppDiv>
 		);
 	}
 }
