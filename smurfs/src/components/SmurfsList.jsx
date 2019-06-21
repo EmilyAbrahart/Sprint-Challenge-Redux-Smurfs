@@ -8,6 +8,7 @@ const SmurfListDiv = styled.div`
 	flex-wrap: wrap;
   position: relative;
   height: 100vh;
+  overflow-y: scroll;
 `;
 
 export class SmurfsList extends React.Component {
