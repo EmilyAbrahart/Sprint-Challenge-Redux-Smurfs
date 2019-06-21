@@ -26,7 +26,7 @@ export const rootReducer = (state = initialState, action) => {
 				...state,
 				error: '',
 				isFetching: false,
-				friends: action.payload
+				smurfs: action.payload
 			};
 
 		case FETCH_SMURFS_FAILURE:
@@ -39,13 +39,13 @@ export const rootReducer = (state = initialState, action) => {
 		case DELETE_SMURF_SUCCESS:
 			return {
 				...state,
-				friends: action.payload
+				smurfs: action.payload
 			};
 
 		case ADD_NEW_SMURF_SUCCESS:
 			return {
 				...state,
-				friends: action.payload
+				smurfs: action.payload
 			};
 
 		default:

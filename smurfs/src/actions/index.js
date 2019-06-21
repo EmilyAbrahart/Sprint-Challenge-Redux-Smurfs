@@ -40,15 +40,15 @@ export const addSmurf = smurf => dispatch => {
 	axios
 		.post('http://localhost:3333/smurfs', smurf)
 		.then(res => dispatch({ type: ADD_NEW_SMURF_SUCCESS, payload: res.data }))
-		.catch(err => console.log(`Could not add friend: ${err.message}`));
+		.catch(err => console.log(`Could not add smurf: ${err.message}`));
 };
 
-export const deleteFriend = id => dispatch => {
+export const deleteSmurf = id => dispatch => {
 	dispatch({ type: DELETE_SMURF });
 	axios
 		.delete(`http://localhost:3333/smurfs/${id}`)
 		.then(res => dispatch({ type: DELETE_SMURF_SUCCESS, payload: res.data }))
 		.catch(err => {
-			console.log(`Could not delete friend: ${err.message}`);
+			console.log(`Could not delete smurf: ${err.message}`);
 		});
 };
