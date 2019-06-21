@@ -6,7 +6,8 @@ import { FlexFunc } from './../~reusables/reusables';
 const SmurfListDiv = styled.div`
 	${FlexFunc('row', 'space-evenly', 'center')};
 	flex-wrap: wrap;
-	position: relative;
+  position: relative;
+  height: 100vh;
 `;
 
 export class SmurfsList extends React.Component {
