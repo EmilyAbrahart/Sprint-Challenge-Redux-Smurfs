@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { SmurfsList } from './SmurfsList';
+import {SmurfForm} from './SmurfForm';
 import { connect } from 'react-redux';
 import { fetchSmurfs, addSmurf, deleteSmurf } from './../actions/index';
 /*
@@ -16,10 +17,10 @@ class App extends Component {
         <h1>Smurfs</h1>
 				<SmurfsList
 					smurfs={this.props.smurfs}
-					addSmurf={this.props.addSmurf}
           fetchSmurfs={this.props.fetchSmurfs}
           deleteSmurf={this.props.deleteSmurf}
 				/>
+        <SmurfForm 	addSmurf={this.props.addSmurf} />
 			</div>
 		);
 	}
